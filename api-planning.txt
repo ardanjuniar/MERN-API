@@ -51,6 +51,35 @@ err-response:
 Group: Blog
 
 [1] - Create Blog Post
+[POST] : {root.api}/{version}/blog/post
+
+req:
+{
+  "title": "Title Blog",
+  "image": "imagefile.png",
+  "body": "Body Blog" 
+}
+
+res: 
+{
+  "message": "Create Blog Post Success",
+  "data": {
+    "post_id": 1,
+    "title": "Title Blog",
+    "image": "imagefile.png",
+    "body": "Body Blog",
+    "created_at": "xx/xx/xxxx"
+    "author": {
+      "uid": 1,
+      "name": "Sample"
+    }
+  }
+}
+
+err-response: 
+201 -> Blog Post Berhasil Dibuat
+400 -> Input yang anda masukan tidak valid
+
 [2] - Get Blog Post
 [3] - Update Blog Post
 [4] - Delete Blog Post
